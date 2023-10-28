@@ -1,0 +1,36 @@
+$colors: (
+        'background': #081b29,
+        'second_background': #112e42,
+        'transparent': transparent
+);
+
+$text-colors: (
+        'text':#ededed,
+        'main':#00abf0,
+);
+
+$main-text-color: map-get($text-colors, 'main');
+$second-text-color: map-get($text-colors, 'text');
+$main-background-color: map-get($colors, 'background');
+$second-background-color: map-get($colors, 'second_background');
+
+
+@mixin media-min-width($width) {
+    @media (min-width: $width) {
+        @content;
+    }
+}
+
+@mixin media-max-width($width) {
+    @media (max-width: $width) {
+        @content;
+    }
+}
+
+$desktop-width: 1200px;
+$tablet-width: 991px;
+$tablet-small-width: 850px;
+$mobile-width: 767px;
+$mobile-small-width: 575px;
+$mobile-tiny-width: 462px;
+$mobile-smallest-width: 371px;

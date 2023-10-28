@@ -1,0 +1,146 @@
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+section:nth-child(even) .animate.scroll,
+footer .animate.scroll {
+    background: $second-background-color;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    padding: 0 9%;
+    background-size: cover;
+    background: url("/images/Niu_4.jpg") no-repeat center;
+}
+
+.home-content {
+    max-width: 60rem;
+    z-index: 99;
+
+    h1 {
+        position: relative;
+        display: inline-block;
+        font-size: 5.6rem;
+        font-weight: 700;
+        line-height: 1.3;
+
+
+        span {
+            color: $second-text-color;
+        }
+    }
+
+    .home-content__animate {
+        position: relative;
+        width: 32.8rem;
+
+        h3 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: map-get($colors, 'transparent');
+            -webkit-text-stroke: .7px $main-text-color;
+            background-image: linear-gradient($main-text-color, $main-text-color);
+            background-repeat: no-repeat;
+            -webkit-background-clip: text;
+            background-position: -33rem 0;
+
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 100%;
+                border-right: 2px solid $main-text-color;
+                z-index: -1;
+            }
+        }
+    }
+
+    p {
+        position: relative;
+        font-size: 1.6rem;
+        margin: 2rem 0 4rem;
+    }
+}
+
+
+.home-sci {
+    position: absolute;
+    bottom: 4rem;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: .2rem solid $main-text-color;
+        border-radius: 50%;
+        font-size: 20px;
+        color: $main-text-color;
+        z-index: 1;
+        overflow: hidden;
+        transition: .5s;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: $main-text-color;
+            z-index: -1;
+            transition: .5s;
+        }
+
+        &:hover::before {
+            width: 100%;
+        }
+
+        &:hover {
+            color: $main-background-color;
+        }
+    }
+}
+
+.home-imgHover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background: transparent;
+    transition: 3s;
+    opacity: .8;
+
+    &:hover {
+        background: $main-background-color;
+    }
+}
+
+.animate.home-img {
+    width: 50%;
+}
+
+.home.show-animate .home-content .home-content__animate h3 {
+    animation: homeBgText 6s linear infinite;
+    animation-delay: 2s;
+
+}
+
+.home.show-animate .home-content .home-content__animate h3::before {
+    animation: homeCursorText 6s linear infinite;
+    animation-delay: 2s;
+}
+
